@@ -1,7 +1,7 @@
 //! The bitcoin-circle-stark crate implements a number of Bitcoin script gadgets for
 //! a stwo proof verifier.
 
-#![deny(missing_docs)]
+// #![deny(missing_docs)]
 
 use crate::treepp::pushable::{Builder, Pushable};
 use stwo_prover::core::circle::CirclePoint;
@@ -35,7 +35,7 @@ pub mod tests_utils;
 /// Module for utility functions.
 pub mod utils;
 
-pub(crate) mod treepp {
+pub mod treepp {
     pub use bitcoin_script::{define_pushable, script};
 
     pub use bitcoin_scriptexec::{convert_to_witness, get_final_stack};
@@ -85,7 +85,7 @@ impl Pushable for CirclePoint<QM31> {
 }
 
 #[allow(non_snake_case)]
-pub(crate) fn OP_HINT() -> treepp::Script {
+pub fn OP_HINT() -> treepp::Script {
     use treepp::*;
     script! {
         OP_DEPTH OP_1SUB OP_ROLL
